@@ -67,12 +67,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="entities\Candidacy.cs" />
-    <Compile Include="entities\Employe.cs" />
-    <Compile Include="entities\Experience.cs" />
-    <Compile Include="entities\Offer.cs" />
-    <Compile Include="entities\Statut.cs" />
-    <Compile Include="entities\Training.cs" />
+    <Compile Include="modeleFluent\Candidacy.cs" />
+    <Compile Include="modeleFluent\ContextFluent.cs" />
+    <Compile Include="modeleFluent\Employe.cs" />
+    <Compile Include="modeleFluent\Experience.cs" />
+    <Compile Include="modeleFluent\Offer.cs" />
+    <Compile Include="modeleFluent\Statut.cs" />
+    <Compile Include="modeleFluent\Training.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
