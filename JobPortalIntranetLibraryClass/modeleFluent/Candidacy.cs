@@ -7,6 +7,7 @@ namespace JobPortalIntranetLibraryClass.modeleFluent
 {
     public class Candidacy
     {
+        public int id { get; set; }
         public int OfferId { get; set; }
         public Offer Offer { get; set; }
 
@@ -24,6 +25,7 @@ namespace JobPortalIntranetLibraryClass.modeleFluent
         public CandidacyFluent()
         {
             ToTable("APP_CANDIDACY");
+            HasKey(c => c.id);
             HasRequired(cc => cc.Employe).WithMany(c => c.Candidacies).HasForeignKey(c => c.EmployeId);
             HasRequired(cc => cc.Offer).WithMany(c => c.Candidacies).HasForeignKey(c => c.OfferId);
         

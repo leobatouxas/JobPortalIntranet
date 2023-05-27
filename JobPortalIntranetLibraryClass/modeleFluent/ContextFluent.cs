@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace JobPortalIntranetLibraryClass.modeleFluent
 {
-    class ContextFluent : DbContext
+    public class ContextFluent : DbContext
     {
-        public ContextFluent() : base("name=JobPortalIntranet")
+        public ContextFluent() : base("name=Cours1ConnexionString2")
         {
             Database.SetInitializer<ContextFluent>(new DropCreateDatabaseIfModelChanges<ContextFluent>());
         }
@@ -18,6 +19,7 @@ namespace JobPortalIntranetLibraryClass.modeleFluent
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.HasDefaultSchema("dbo");
+            //modelBuilder.Configurations.AddFromAssembly(Assembly.GetExecutingAssembly());
             modelBuilder.Configurations.Add(new StatutFluent());
             modelBuilder.Configurations.Add(new OfferFluent());
             modelBuilder.Configurations.Add(new CandidacyFluent());

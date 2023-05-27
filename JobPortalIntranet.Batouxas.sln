@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobPortalIntranetLibraryCla
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestJobPortalIntranet", "UnitTestJobPortalIntranet\UnitTestJobPortalIntranet.csproj", "{B609EE82-C543-464F-BF7A-C1E0D5FE0ED3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{81C78034-5811-45A1-8BC1-079086C85976}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B609EE82-C543-464F-BF7A-C1E0D5FE0ED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B609EE82-C543-464F-BF7A-C1E0D5FE0ED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B609EE82-C543-464F-BF7A-C1E0D5FE0ED3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81C78034-5811-45A1-8BC1-079086C85976}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81C78034-5811-45A1-8BC1-079086C85976}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81C78034-5811-45A1-8BC1-079086C85976}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81C78034-5811-45A1-8BC1-079086C85976}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
