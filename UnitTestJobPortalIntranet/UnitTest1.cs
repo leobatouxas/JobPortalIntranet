@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using JobPortalIntranetLibraryClass.modeleFluent;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
 namespace UnitTestJobPortalIntranet
