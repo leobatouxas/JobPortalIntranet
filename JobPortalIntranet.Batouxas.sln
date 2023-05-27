@@ -3,11 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobPortalIntranetLibraryClass", "JobPortalIntranetLibraryClass\JobPortalIntranetLibraryClass.csproj", "{EAD06C21-C793-498E-9B23-5CF5A059FB3A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modele", "JobPortalIntranetLibraryClass\Modele.csproj", "{EAD06C21-C793-498E-9B23-5CF5A059FB3A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestJobPortalIntranet", "UnitTestJobPortalIntranet\UnitTestJobPortalIntranet.csproj", "{B609EE82-C543-464F-BF7A-C1E0D5FE0ED3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{81C78034-5811-45A1-8BC1-079086C85976}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Serveur", "Serveur", "{3B0F72C4-7C52-4794-9ABE-922115CD23C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console", "Console", "{D46EB707-F166-4E8E-A174-DF0DCA5235AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{33B72791-8C4C-4099-9F45-569CDB9B9BF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{F11043AD-3C37-4317-8ADA-F5512696D306}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +35,19 @@ Global
 		{81C78034-5811-45A1-8BC1-079086C85976}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81C78034-5811-45A1-8BC1-079086C85976}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81C78034-5811-45A1-8BC1-079086C85976}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F11043AD-3C37-4317-8ADA-F5512696D306}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F11043AD-3C37-4317-8ADA-F5512696D306}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F11043AD-3C37-4317-8ADA-F5512696D306}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F11043AD-3C37-4317-8ADA-F5512696D306}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EAD06C21-C793-498E-9B23-5CF5A059FB3A} = {3B0F72C4-7C52-4794-9ABE-922115CD23C5}
+		{B609EE82-C543-464F-BF7A-C1E0D5FE0ED3} = {33B72791-8C4C-4099-9F45-569CDB9B9BF3}
+		{81C78034-5811-45A1-8BC1-079086C85976} = {D46EB707-F166-4E8E-A174-DF0DCA5235AD}
+		{F11043AD-3C37-4317-8ADA-F5512696D306} = {3B0F72C4-7C52-4794-9ABE-922115CD23C5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {212A2B46-B973-4443-81A2-35365270E013}
