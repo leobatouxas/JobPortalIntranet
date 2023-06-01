@@ -61,6 +61,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
+      <Project>{f11043ad-3c37-4317-8ada-f5512696d306}</Project>
+      <Name>BusinessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\JobPortalIntranetLibraryClass\Modele.csproj">
       <Project>{ead06c21-c793-498e-9b23-5cf5a059fb3a}</Project>
       <Name>Modele</Name>
