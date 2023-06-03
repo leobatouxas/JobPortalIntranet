@@ -7,7 +7,6 @@ namespace JobPortalIntranetLibraryClass.modeleFluent
 {
     public class Candidacy
     {
-        public int id { get; set; }
         public int OfferId { get; set; }
         public Offer Offer { get; set; }
 
@@ -25,12 +24,17 @@ namespace JobPortalIntranetLibraryClass.modeleFluent
         public CandidacyFluent()
         {
             ToTable("APP_CANDIDACY");
-            HasKey(c => c.id);
+            HasKey(cc => new { cc.OfferId, cc.EmployeId });
+
+            Property(cc => cc.OfferId).HasColumnName("CAN_OFFERID").IsRequired();
+            Property(cc => cc.EmployeId).HasColumnName("CAN_EMPLOYEID").IsRequired();
+            Property(cc => cc.Date).HasColumnName("CAN_DATE");
+            Property(cc => cc.Status).HasColumnName("CAN_STATUS").IsRequired();
+
             HasRequired(cc => cc.Employe).WithMany(c => c.Candidacies).HasForeignKey(c => c.EmployeId);
             HasRequired(cc => cc.Offer).WithMany(c => c.Candidacies).HasForeignKey(c => c.OfferId);
         
-            Property(cc => cc.Date).HasColumnName("CAN_DATE");
-            Property(cc => cc.Status).HasColumnName("CAN_STATUS").IsRequired();
+            
         }
     }
 }

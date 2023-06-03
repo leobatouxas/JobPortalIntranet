@@ -34,24 +34,23 @@ namespace ConsoleApp
                 Console.WriteLine("Client n°{0} : {1} {2}", c.Id, c.Firstname, c.Lastname);
             }
 
-            Console.WriteLine(employes);
-            Console.ReadLine();
+            
 
 
-            //Statut statut = new Statut();
-            //statut.Id = 1;
-            //statut.Libelle = "Libelle 1";
-            //contexte.Statuts.Add(statut);
+            Statut statut = new Statut();
+            statut.Id = 1;
+            statut.Libelle = "Libelle 1";
+            bm.AddStatut(statut);
 
 
-            //Offer offer = new Offer();
-            //offer.Title = "Offer 1";
-            //offer.Description = "descrition offer 1";
-            //offer.Statut = statut;
-            //offer.Responsible = "Responsible 1";
-            //offer.Salary = 4500;
-            //offer.Date = DateTime.Now;
-            //contexte.Offers.Add(offer);
+            Offer offer = new Offer();
+            offer.Title = "Offer 1";
+            offer.Description = "descrition offer 1";
+            offer.Statut = statut;
+            offer.Responsible = "Responsible 1";
+            offer.Salary = 4500;
+            offer.Date = DateTime.Now;
+            bm.AddOffer(offer);
 
             //Employe employe = new Employe();
             //employe.Seniority = 1;
@@ -59,30 +58,30 @@ namespace ConsoleApp
             //employe.Firstname = "firstname 1";
             //employe.Dateofbirth = DateTime.Now;
             //employe.Biography = "biographie 1";
-            //contexte.Employes.Add(employe);
+            //bm.AddEmploye(employe);
 
-            //Experience experience = new Experience();
-            //experience.Title = "experience 1";
-            //experience.Date = DateTime.Now.AddDays(1);
-            //experience.Employe = employe;
-            //contexte.Experiences.Add(experience);
+            Experience experience = new Experience();
+            experience.Title = "experience 1";
+            experience.Date = DateTime.Now.AddDays(1);
+            experience.Employe = employe;
+            bm.AddExperience(experience);
 
-            //Training training = new Training();
-            //training.Title = "title 1";
-            //training.Date = DateTime.Now.AddDays(1);
-            //training.Employe = employe;
-            //contexte.Trainings.Add(training);
+            Training training = new Training();
+            training.Title = "title 1";
+            training.Date = DateTime.Now.AddDays(1);
+            training.Employe = employe;
+            bm.AddTraining(training);
 
-            //Candidacy candidacy = new Candidacy();
-            //candidacy.Offer = offer;
-            //candidacy.Employe = employe;
-            //candidacy.Date = DateTime.Now.AddDays(1);
-            //candidacy.Status = "Statut";
-            //contexte.Candidacies.Add(candidacy);
+            Candidacy candidacy = new Candidacy();
+            candidacy.Offer = offer;
+            candidacy.Employe = employe;
+            candidacy.Date = DateTime.Now.AddDays(1);
+            candidacy.Status = "Statut";
+            bm.AddCandidacy(candidacy);
 
             //contexte.SaveChanges();
-            //Console.WriteLine("FINISH");
-            //Console.ReadLine();
+            Console.WriteLine("FINISH");
+            Console.ReadLine();
 
 
 

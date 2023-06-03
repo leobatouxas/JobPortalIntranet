@@ -178,7 +178,7 @@ namespace BusinessLayer
         /// </summary>
         /// <param name="t">Formation à ajouter</param>
         /// <returns>identifiant de la nouvelle Formation</returns>
-        public int AddFormation(Training t)
+        public int AddTraining(Training t)
         {
             // TODO : ajouter des contrôles sur la formation (exemple : vérification de champ, etc.)
             TrainingCommand tc = new TrainingCommand(contexte);
@@ -189,7 +189,7 @@ namespace BusinessLayer
         /// Modifier une Formation en base
         /// </summary>
         /// <param name="t">Formation à modifier</param>
-        public void UpdateFormation(Training t)
+        public void UpdateTraining(Training t)
         {
             // TODO : ajouter des contrôles sur l'Experience (exemple : vérification de champ, etc.)
             TrainingCommand tc = new TrainingCommand(contexte);
@@ -200,7 +200,7 @@ namespace BusinessLayer
         /// Supprimer un Formation en base
         /// </summary>
         /// <param name="id">Identifiant de la Formation à supprimer</param>
-        public void DeleteFormation(int id)
+        public void DeleteTraining(int id)
         {
             TrainingCommand tc = new TrainingCommand(contexte);
             tc.Delete(id);
@@ -223,10 +223,10 @@ namespace BusinessLayer
         /// </summary>
         /// <param name="id">id de la Candidature à ajouter</param>
         /// <returns>Une Candidature</returns>
-        public Candidacy GetCandidacyById(int id)
+        public Candidacy GetCandidacyById(int EmployeId, int OfferId)
         {
             CandidacyQuery cq = new CandidacyQuery(contexte);
-            return cq.GetByID(id).First();
+            return cq.GetByID(EmployeId, OfferId).First();
         }
 
         /// <summary>
@@ -256,10 +256,10 @@ namespace BusinessLayer
         /// Supprimer un Candidature en base
         /// </summary>
         /// <param name="id">Identifiant de la Candidature à supprimer</param>
-        public void DeleteCandidacy(int id)
+        public void DeleteCandidacy(int EmployeId, int OfferId)
         {
             CandidacyCommand cc = new CandidacyCommand(contexte);
-            cc.Delete(id);
+            cc.Delete(EmployeId, OfferId);
         }
         #endregion
 

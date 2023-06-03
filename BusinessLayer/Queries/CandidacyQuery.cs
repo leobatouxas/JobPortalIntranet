@@ -36,9 +36,9 @@ namespace BusinessLayer.Queries
         /// </summary>
         /// <param name="id">Identifiant de la Candidature à récupérer</param>
         /// <returns>IQueryable de Candidature</returns>
-        public IQueryable<Candidacy> GetByID(int id)
+        public IQueryable<Candidacy> GetByID(int EmployeId, int OfferId)
         {
-            return _contexte.Candidacies.Where(p => p.id == id);
+            return _contexte.Candidacies.Where(p => p.EmployeId == EmployeId && p.OfferId == OfferId);
         }
 
     }

@@ -37,7 +37,7 @@ namespace BusinessLayer.Commands
         /// <param name="e">candidature à modifier</param>
         public void Update(Candidacy c)
         {
-            Candidacy upCan = _contexte.Candidacies.Where(prd => prd.id == c.id).FirstOrDefault();
+            Candidacy upCan = _contexte.Candidacies.Where(prd => prd.EmployeId == c.EmployeId).FirstOrDefault();
             if (upCan != null)
             {
                 upCan.OfferId = c.OfferId;
@@ -52,9 +52,9 @@ namespace BusinessLayer.Commands
         /// Supprimer une candidature en base à partir du contexte et de son identifiant
         /// </summary>
         /// <param name="id">Identifiant de la candidature à supprimer</param>
-        public void Delete(int id)
+        public void Delete(int EmployeId, int OfferId)
         {
-            Candidacy delCan = _contexte.Candidacies.Where(prd => prd.id == id).FirstOrDefault();
+            Candidacy delCan = _contexte.Candidacies.Where(prd => prd.EmployeId == EmployeId && prd.OfferId == OfferId).FirstOrDefault();
             if (delCan != null)
             {
                 _contexte.Candidacies.Remove(delCan);
