@@ -27,7 +27,7 @@ namespace BusinessLayer.Commands
         /// <returns>Identifiant de la offre ajouté</returns>
         public int Add(Offer o)
         {
-            _contexte.Trainings.Add(o);
+            _contexte.Offers.Add(o);
             return _contexte.SaveChanges();
         }
 
@@ -37,7 +37,7 @@ namespace BusinessLayer.Commands
         /// <param name="e">offre à modifier</param>
         public void Update(Offer o)
         {
-            Offer upOff = _contexte.Offers.Where(prd => prd.Id == e.Id).FirstOrDefault();
+            Offer upOff = _contexte.Offers.Where(prd => prd.Id == o.Id).FirstOrDefault();
             if (upOff != null)
             {
                 upOff.Title = o.Title;

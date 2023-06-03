@@ -37,7 +37,7 @@ namespace BusinessLayer.Commands
         /// <param name="e">formation à modifier</param>
         public void Update(Training t)
         {
-            Training upTra = _contexte.Trainings.Where(prd => prd.Id == e.Id).FirstOrDefault();
+            Training upTra = _contexte.Trainings.Where(prd => prd.Id == t.Id).FirstOrDefault();
             if (upTra != null)
             {
                 upTra.Title = t.Title;

@@ -48,10 +48,10 @@ namespace BusinessLayer
         }
 
         /// <summary>
-        /// Récupérer une experience en base
+        /// Récupérer un employé en base
         /// </summary>
         /// <param name="id">id de l'employé à ajouter</param>
-        /// <returns>Une experience</returns>
+        /// <returns>Un employé</returns>
         public Employe GetEmployeById(int id)
         {
             EmployeQuery eq = new EmployeQuery(contexte);
@@ -368,9 +368,9 @@ namespace BusinessLayer
         /// Supprimer un statut en base
         /// </summary>
         /// <param name="id">Identifiant du statut à supprimer</param>
-        public void DeleteOffer(int id)
+        public void DeleteStatut(int id)
         {
-            OfferCommand oc = new OfferCommand(contexte);
+            StatutCommand oc = new StatutCommand(contexte);
             oc.Delete(id);
         }
         #endregion

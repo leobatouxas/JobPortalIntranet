@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Commands\CandidacyCommand.cs" />
     <Compile Include="Commands\OfferCommand.cs" />
+    <Compile Include="Commands\StatutCommand.cs" />
     <Compile Include="Commands\TrainingCommand.cs" />
     <Compile Include="Commands\ExperienceCommand.cs" />
     <Compile Include="Commands\EmployeCommand.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries\OfferQuery.cs" />
     <Compile Include="Queries\CandidacyQuery.cs" />
+    <Compile Include="Queries\StatutQuery.cs" />
     <Compile Include="Queries\TrainingQuery.cs" />
     <Compile Include="Queries\EmployeQuery.cs" />
     <Compile Include="Queries\ExperienceQuery.cs" />
