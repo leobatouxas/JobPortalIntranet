@@ -23,19 +23,19 @@ namespace BusinessLayer.Queries
 
 
         /// <summary>
-        /// Récupérer tous les produits
+        /// Récupérer tous les employé
         /// </summary>
-        /// <returns>IQueryable de Produit</returns>
+        /// <returns>IQueryable de employé</returns>
         public IQueryable<Employe> GetAll()
         {
             return _contexte.Employes;
         }
 
         /// <summary>
-        /// Récupérer un produit par son ID
+        /// Récupérer un employé par son ID
         /// </summary>
-        /// <param name="id">Identifiant du produit à récupérer</param>
-        /// <returns>IQueryable de Produit</returns>
+        /// <param name="id">Identifiant de l'employé à récupérer</param>
+        /// <returns>IQueryable de Employe</returns>
         public IQueryable<Employe> GetByID(int id)
         {
             return _contexte.Employes.Where(p => p.Id == id);

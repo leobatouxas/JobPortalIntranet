@@ -21,10 +21,10 @@ namespace BusinessLayer.Commands
         }
 
         /// <summary>
-        /// Ajouter le produit en base à partir du contexte
+        /// Ajouter l'employé en base à partir du contexte
         /// </summary>
-        /// <param name="e">Produit à ajouter</param>
-        /// <returns>Identifiant du produit ajouté</returns>
+        /// <param name="e">Employé à ajouter</param>
+        /// <returns>Identifiant de l'employé ajouté</returns>
         public int Add(Employe e)
         {
             _contexte.Employes.Add(e);
@@ -32,33 +32,36 @@ namespace BusinessLayer.Commands
         }
 
         /// <summary>
-        /// Modifier un produit déjà présent en base à partir du cotnexte
+        /// Modifier un employé déjà présent en base à partir du contexte
         /// </summary>
-        /// <param name="p">Produit à modifier</param>
-        //public void Modify(Employe p)
-        //{
-        //    Employe upPrd = _contexte.Employes.Where(prd => prd.ID == p.ID).FirstOrDefault();
-        //    if (upPrd != null)
-        //    {
-        //        upPrd.Nom = p.Nom;
-        //        upPrd.CategorieID = p.CategorieID;
-        //    }
-        //    _contexte.SaveChanges();
-        //}
+        /// <param name="e">Employé à modifier</param>
+        public void Update(Employe e)
+        {
+            Employe upEmpl = _contexte.Employes.Where(prd => prd.Id == e.Id).FirstOrDefault();
+            if (upEmpl != null)
+            {
+                upEmpl.Firstname = e.Firstname;
+                upEmpl.Lastname = e.Lastname;
+                upEmpl.Dateofbirth = e.Dateofbirth;
+                upEmpl.Seniority = e.Seniority;
+                upEmpl.Biography = e.Biography;
+            }
+            _contexte.SaveChanges();
+        }
 
         /// <summary>
-        /// Supprimer un produit en base à partir du contexte et de son identifiant
+        /// Supprimer un employé en base à partir du contexte et de son identifiant
         /// </summary>
-        /// <param name="produitID">Identifiant du produit à supprimer</param>
-        //public void Supprimer(int produitID)
-        //{
-        //    Produit delPrd = _contexte.Produits.Where(prd => prd.ID == produitID).FirstOrDefault();
-        //    if (delPrd != null)
-        //    {
-        //        _contexte.Produits.Remove(delPrd);
-        //    }
-        //    _contexte.SaveChanges();
-        //}
+        /// <param name="id">Identifiant de l'employé à supprimer</param>
+        public void Delete(int id)
+        {
+            Employe delEmpl = _contexte.Employes.Where(prd => prd.Id == id).FirstOrDefault();
+            if (delEmpl != null)
+            {
+                _contexte.Employes.Remove(delEmpl);
+            }
+            _contexte.SaveChanges();
+        }
     }
 }
 
