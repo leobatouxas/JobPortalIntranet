@@ -37,7 +37,7 @@ namespace WpfApp.ViewModels
         /// <summary>
         /// Titre de l'offre
         /// </summary>
-        public string Code
+        public string Title
         {
             get { return _title; }
             set { _title = value; }

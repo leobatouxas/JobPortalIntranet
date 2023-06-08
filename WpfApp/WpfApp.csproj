@@ -70,6 +70,9 @@
     <Compile Include="ViewModels\DetailOfferViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\ListOfferViewModel.cs" />
+    <Compile Include="Views\DetailOffer.xaml.cs">
+      <DependentUpon>DetailOffer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ListOffer.xaml.cs">
       <DependentUpon>ListOffer.xaml</DependentUpon>
     </Compile>
@@ -85,6 +88,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\DetailOffer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ListOffer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

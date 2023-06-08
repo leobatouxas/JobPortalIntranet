@@ -36,7 +36,11 @@ namespace WpfApp.ViewModels
             }
 
             if (_offers != null && _offers.Count > 0)
+            {
                 _selectedOffer = _offers.ElementAt(0);
+
+            }
+            Console.WriteLine("construct");
         }
 
         #endregion
@@ -46,20 +50,20 @@ namespace WpfApp.ViewModels
         /// <summary>
         /// Obtient ou définit une collection de DetailProduitViewModel (Observable)
         /// </summary>
-        public ObservableCollection<DetailOfferViewModel> Offer
+        public ObservableCollection<DetailOfferViewModel> Offers
         {
             get { return _offers; }
             set
             {
                 _offers = value;
-                OnPropertyChanged("Produits");
+                OnPropertyChanged("Offers");
             }
         }
 
         /// <summary>
         /// Obtient ou défini le produit en cours de sélection dans la liste de DetailProduitViewModel
         /// </summary>
-        public DetailOfferViewModel SelectedProduit
+        public DetailOfferViewModel SelectedOffer
         {
             get { return _selectedOffer; }
             set
