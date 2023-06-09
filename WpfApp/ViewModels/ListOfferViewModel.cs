@@ -17,6 +17,8 @@ namespace WpfApp.ViewModels
         private ObservableCollection<DetailOfferViewModel> _offers = null;
         private DetailOfferViewModel _selectedOffer;
 
+        private ObservableCollection<Statut> _statuts;
+        private Statut _selectedStatut;
         #endregion
 
         #region Constructeurs
@@ -28,6 +30,7 @@ namespace WpfApp.ViewModels
         {
             // on appelle le mock pour initialiser une liste de produits
             _offers = new ObservableCollection<DetailOfferViewModel>();
+
             Manager bm = Manager.Instance;
 
             foreach (Offer o in bm.GetAllOffer())
@@ -40,6 +43,9 @@ namespace WpfApp.ViewModels
                 _selectedOffer = _offers.ElementAt(0);
 
             }
+
+            _statuts = new ObservableCollection<Statut>(bm.GetAllStatut());
+
             Console.WriteLine("construct");
         }
 
@@ -70,6 +76,27 @@ namespace WpfApp.ViewModels
             {
                 _selectedOffer = value;
                 OnPropertyChanged("SelectedOffer");
+            }
+        }
+
+        public ObservableCollection<Statut> Statuts
+        {
+            get { return _statuts; }
+            set
+            {
+                _statuts = value;
+                OnPropertyChanged("Statuts");
+            }
+        }
+
+        public Statut SelectedStatut
+        {
+            get { return _selectedStatut; }
+            set
+            {
+                _selectedStatut= value;
+                OnPropertyChanged("SelectedStatus");
+                Console.WriteLine("change statut");
             }
         }
 

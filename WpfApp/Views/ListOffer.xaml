@@ -12,15 +12,19 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <ListView ItemsSource="{Binding Offers, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedOffer, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Width="150px" Header="Title" DisplayMemberBinding="{Binding Title}" />
-                    <GridViewColumn Width="200px"  Header="Description" DisplayMemberBinding="{Binding Description}" />
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <StackPanel>
+            <ComboBox ItemsSource="{Binding Statuts}" SelectedItem="{Binding SelectedStatut}" DisplayMemberPath="Libelle"/>
+            <ListView ItemsSource="{Binding Offers, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedOffer, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="150px" Header="Title" DisplayMemberBinding="{Binding Title}" />
+                        <GridViewColumn Width="200px"  Header="Description" DisplayMemberBinding="{Binding Description}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+        
         <local:DetailOffer Grid.Column="1" DataContext="{Binding SelectedOffer, UpdateSourceTrigger=PropertyChanged}"/>
-
+        
     </Grid>
 </UserControl>
