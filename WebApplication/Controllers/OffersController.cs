@@ -13,7 +13,6 @@ namespace WebApplication.Controllers
 {
     public class OffersController : Controller
     {
-        private ContextFluent db = new ContextFluent();
         private Manager manager;
         public OffersController()
         {
