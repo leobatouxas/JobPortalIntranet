@@ -58,8 +58,26 @@
             @Html.DisplayFor(model => model.Responsible)
         </dd>
 
+        <dt>
+            Postulants
+        </dt>
+
+        @if (Model.Candidacies.Count > 0)
+        {
+            foreach (var candidacy in Model.Candidacies)
+            {
+                <dd>
+                    @Html.DisplayFor(m => candidacy.Employe.Firstname)
+                    @Html.DisplayFor(m => candidacy.Employe.Lastname)
+                </dd>
+            }
+        }
+        else
+        {
+            <dd>Aucun employé n'a postulé</dd>
+        }
     </dl>
-</div>
+    </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")

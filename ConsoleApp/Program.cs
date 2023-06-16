@@ -36,12 +36,22 @@ namespace ConsoleApp
 
             Console.WriteLine("Liste des offres ");
 
-            List<Offer> offers = bm.GetAllOffer();
-            Console.WriteLine("Liste de mes clients avec DA : ");
-            foreach (Offer c in offers)
-            {
-                Console.WriteLine("Offre n°{0}", c.Id);
-            }
+            //List<Offer> offers = bm.GetAllOffer();
+            //Console.WriteLine("Liste de mes clients avec DA : ");
+            //foreach (Offer c in offers)
+            //{
+            //    Console.WriteLine("Offre n°{0}", c.Id);
+            //}
+
+            Offer offer = bm.GetOfferById(5);
+            Candidacy candidacy = new Candidacy();
+            candidacy.Offer = offer;
+            //candidacy.OfferId = offer.Id;
+            candidacy.EmployeId = 3;
+            //candidacy
+            candidacy.Date = DateTime.Now;
+            candidacy.Status = "statut 1";
+            bm.AddCandidacy(candidacy);
 
 
 
@@ -68,13 +78,13 @@ namespace ConsoleApp
             //Console.WriteLine("4 ");
 
 
-            ////Employe employe = new Employe();
-            ////employe.Seniority = 1;
-            ////employe.Lastname = "lastname 1";
-            ////employe.Firstname = "firstname 1";
-            ////employe.Dateofbirth = DateTime.Now;
-            ////employe.Biography = "biographie 1";
-            ////bm.AddEmploye(employe);
+            //Employe employe = new Employe();
+            //employe.Seniority = 1;
+            //employe.Lastname = "doe";
+            //employe.Firstname = "john";
+            //employe.Dateofbirth = DateTime.Now;
+            //employe.Biography = "biographie 1";
+            //bm.AddEmploye(employe);
 
             //Experience experience = new Experience();
             //experience.Title = "experience 1";
