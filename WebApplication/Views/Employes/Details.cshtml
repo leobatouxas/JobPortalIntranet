@@ -50,6 +50,44 @@
             @Html.DisplayFor(model => model.Biography)
         </dd>
 
+        <dt>
+            Expériences
+        </dt>
+
+        @if (Model.Experiences.Count > 0)
+        {
+            foreach (var experience in Model.Experiences)
+            {
+                <dd>
+                    @Html.DisplayFor(m => experience.Title) -
+                    @Html.DisplayFor(m => experience.Date)
+                </dd>
+            }
+        }
+        else
+        {
+            <dd>L'employé n'a aucune expérience</dd>
+        }
+
+        <dt>
+            Expériences
+        </dt>
+
+        @if (Model.Trainings.Count > 0)
+        {
+            foreach (var training in Model.Trainings)
+            {
+                <dd>
+                    @Html.DisplayFor(m => training.Title) -
+                    @Html.DisplayFor(m => training.Date)
+                </dd>
+            }
+        }
+        else
+        {
+            <dd>L'employé n'a aucun diplome</dd>
+        }
+
     </dl>
 </div>
 <p>

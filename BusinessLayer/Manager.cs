@@ -275,6 +275,16 @@ namespace BusinessLayer
         }
 
         /// <summary>
+        /// Récupérer une liste d'offre en fonction d'une recherche
+        /// </summary>
+        /// <returns>Liste d'offre</returns>
+        public List<Offer> PerformSearchOffer(string searchTerm)
+        {
+            OfferQuery oq = new OfferQuery(contexte);
+            return oq.PerformSearch(searchTerm).ToList();
+        }
+
+        /// <summary>
         /// Récupérer une offre en base
         /// </summary>
         /// <param name="id">id de l'offre à ajouter</param>

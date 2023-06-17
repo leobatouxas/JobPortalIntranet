@@ -42,5 +42,21 @@ namespace BusinessLayer.Queries
             return _contexte.Offers.Where(p => p.Id == id).Include(c => c.Candidacies).Include(c => c.Candidacies.Select(e => e.Employe));
         }
 
+        public IQueryable<Offer> PerformSearch(string searchTerm)
+        {
+            // Effectuer la recherche dans votre tableau de données (par exemple, en utilisant LINQ)
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                searchTerm = searchTerm.ToLower();
+                return _contexte.Offers.Where(o => o.Title.ToLower().Contains(searchTerm) ||
+                                        o.Description.ToLower().Contains(searchTerm) ||
+                                        o.Responsible.ToLower().Contains(searchTerm));
+            }
+            else
+            {
+                return _contexte.Offers;
+            }
+        }
+
     }
 }

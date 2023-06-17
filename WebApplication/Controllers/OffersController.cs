@@ -20,10 +20,13 @@ namespace WebApplication.Controllers
         }
 
         // GET: Offers
-        public ActionResult Index()
+        public ActionResult Index(string searchTerm)
         {
-            List<Offer> offers = manager.GetAllOffer();
-            return View(offers);
+            // Effectuer la recherche et obtenir les résultats
+            IEnumerable<Offer> searchResults = manager.PerformSearchOffer(searchTerm);
+
+            // Afficher les résultats de recherche
+            return View(searchResults);
         }
 
         // GET: Offers/Details/5

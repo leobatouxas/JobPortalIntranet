@@ -43,15 +43,15 @@ namespace ConsoleApp
             //    Console.WriteLine("Offre n°{0}", c.Id);
             //}
 
-            Offer offer = bm.GetOfferById(5);
-            Candidacy candidacy = new Candidacy();
-            candidacy.Offer = offer;
-            //candidacy.OfferId = offer.Id;
-            candidacy.EmployeId = 3;
-            //candidacy
-            candidacy.Date = DateTime.Now;
-            candidacy.Status = "statut 1";
-            bm.AddCandidacy(candidacy);
+            //Offer offer = bm.GetOfferById(5);
+            //Candidacy candidacy = new Candidacy();
+            //candidacy.Offer = offer;
+            ////candidacy.OfferId = offer.Id;
+            //candidacy.EmployeId = 3;
+            ////candidacy
+            //candidacy.Date = DateTime.Now;
+            //candidacy.Status = "statut 1";
+            //bm.AddCandidacy(candidacy);
 
 
 
@@ -87,16 +87,16 @@ namespace ConsoleApp
             //bm.AddEmploye(employe);
 
             //Experience experience = new Experience();
-            //experience.Title = "experience 1";
+            //experience.Title = "experience 2";
             //experience.Date = DateTime.Now.AddDays(1);
-            //experience.Employe = employe;
+            //experience.EmployeId = 3;
             //bm.AddExperience(experience);
 
-            //Training training = new Training();
-            //training.Title = "title 1";
-            //training.Date = DateTime.Now.AddDays(1);
-            //training.Employe = employe;
-            //bm.AddTraining(training);
+            Training training = new Training();
+            training.Title = "Diplome 2";
+            training.Date = DateTime.Now.AddDays(1);
+            training.EmployeId = 3;
+            bm.AddTraining(training);
 
             //Candidacy candidacy = new Candidacy();
             //candidacy.Offer = offer;

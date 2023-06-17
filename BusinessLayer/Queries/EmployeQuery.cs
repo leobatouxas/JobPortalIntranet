@@ -1,6 +1,7 @@
 ﻿using JobPortalIntranetLibraryClass.modeleFluent;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
@@ -38,7 +39,7 @@ namespace BusinessLayer.Queries
         /// <returns>IQueryable de Employe</returns>
         public IQueryable<Employe> GetByID(int id)
         {
-            return _contexte.Employes.Where(p => p.Id == id);
+            return _contexte.Employes.Where(p => p.Id == id).Include(c => c.Experiences).Include(c => c.Trainings);
         }
 
     }
