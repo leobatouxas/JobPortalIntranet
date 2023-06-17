@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -15,6 +16,7 @@ namespace WpfApp.ViewModels
 
         private string _title;
         private string _description;
+        private Statut _status;
         private RelayCommand _addOperation;
 
         #endregion
@@ -29,6 +31,7 @@ namespace WpfApp.ViewModels
         {
             _title = o.Title; 
             _description = o.Description;
+            _status = o.Statut;
         }
         #endregion
 
@@ -49,6 +52,16 @@ namespace WpfApp.ViewModels
         public string Description
         { get { return _description; }
         set { _description = value; }
+        }
+
+        public Statut Status
+        {
+            get { return _status; }
+            set
+            {
+                _status = value;
+                OnPropertyChanged("Status");
+            }
         }
         #endregion
 

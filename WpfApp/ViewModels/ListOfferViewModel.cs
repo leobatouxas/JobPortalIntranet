@@ -33,16 +33,7 @@ namespace WpfApp.ViewModels
 
             Manager bm = Manager.Instance;
 
-            foreach (Offer o in bm.GetAllOffer())
-            {
-                _offers.Add(new DetailOfferViewModel(o));
-            }
-
-            if (_offers != null && _offers.Count > 0)
-            {
-                _selectedOffer = _offers.ElementAt(0);
-
-            }
+            UpdateSortedList();
 
             _statuts = new ObservableCollection<Statut>(bm.GetAllStatut());
 
@@ -96,11 +87,39 @@ namespace WpfApp.ViewModels
             {
                 _selectedStatut= value;
                 OnPropertyChanged("SelectedStatus");
-                Console.WriteLine("change statut");
+                UpdateSortedList();
             }
         }
 
         #endregion
 
+        private void UpdateSortedList()
+        {
+            if (SelectedStatut != null)
+            {
+                updateOffer();
+                Offers = new ObservableCollection<DetailOfferViewModel>(_offers.Where(offer => offer.Status == SelectedStatut));
+            }
+            else
+            {
+                updateOffer();
+            }
+        }
+
+        private void updateOffer()
+        {
+            Manager bm = Manager.Instance;
+
+            foreach (Offer o in bm.GetAllOffer())
+            {
+                _offers.Add(new DetailOfferViewModel(o));
+            }
+
+            if (_offers != null && _offers.Count > 0)
+            {
+                _selectedOffer = _offers.ElementAt(0);
+
+            }
+        }
     }
 }
