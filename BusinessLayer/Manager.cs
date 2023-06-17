@@ -230,6 +230,17 @@ namespace BusinessLayer
         }
 
         /// <summary>
+        /// Récupérer une liste de Candidature d'un employé
+        /// </summary>
+        /// <param name="EmployeeId">id de l'employé</param>
+        /// <returns>Liste de Candidature</returns>
+        public List<Candidacy> GetAllCandidacyByEmployeeId(int EmployeeId)
+        {
+            CandidacyQuery cq = new CandidacyQuery(contexte);
+            return cq.GetAllByEmployeId(EmployeeId).ToList();
+        }
+
+        /// <summary>
         /// Récupérer une Candidature en base
         /// </summary>
         /// <param name="id">id de la Candidature à ajouter</param>

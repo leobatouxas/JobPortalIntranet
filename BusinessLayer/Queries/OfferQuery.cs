@@ -29,7 +29,7 @@ namespace BusinessLayer.Queries
         /// <returns>IQueryable de Offre</returns>
         public IQueryable<Offer> GetAll()
         {
-            return _contexte.Offers;
+            return _contexte.Offers.Include(o => o.Statut);
         }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace BusinessLayer.Queries
         /// <returns>IQueryable de Offre</returns>
         public IQueryable<Offer> GetByID(int id)
         {
-            return _contexte.Offers.Where(p => p.Id == id).Include(c => c.Candidacies).Include(c => c.Candidacies.Select(e => e.Employe));
+            return _contexte.Offers.Where(p => p.Id == id).Include(o => o.Statut).Include(c => c.Candidacies).Include(c => c.Candidacies.Select(e => e.Employe));
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace BusinessLayer.Queries
             }
             else
             {
-                return _contexte.Offers;
+                return _contexte.Offers.Include(o => o.Statut);
             }
         }
     }

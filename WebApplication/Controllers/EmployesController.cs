@@ -25,7 +25,7 @@ namespace WebApplication.Controllers
         public ActionResult Index(string searchTerm)
         {
             // Effectuer la recherche et obtenir les résultats
-            IEnumerable<Employe> searchResults = manager.PerformSearchEmploye(searchTerm);
+            List<Employe> searchResults = manager.PerformSearchEmploye(searchTerm);
 
             // Afficher les résultats de recherche
             return View(searchResults);

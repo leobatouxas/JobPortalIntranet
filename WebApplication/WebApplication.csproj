@@ -125,6 +125,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CandidaciesController.cs" />
     <Compile Include="Controllers\EmployesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OffersController.cs" />
@@ -191,6 +192,11 @@
     <Content Include="Views\Offers\Index.cshtml" />
     <Content Include="Views\Employes\Details.cshtml" />
     <Content Include="Views\Employes\Index.cshtml" />
+    <Content Include="Views\Candidacies\Create.cshtml" />
+    <Content Include="Views\Candidacies\Delete.cshtml" />
+    <Content Include="Views\Candidacies\Details.cshtml" />
+    <Content Include="Views\Candidacies\Edit.cshtml" />
+    <Content Include="Views\Candidacies\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
