@@ -48,6 +48,17 @@ namespace BusinessLayer
         }
 
         /// <summary>
+        /// Récupérer une liste d'employé en fonction d'une recherche
+        /// </summary>
+        /// /// <param name="searchTerm">termes de recherche</param>
+        /// <returns>Liste d'employé</returns>
+        public List<Employe> PerformSearchEmploye(string searchTerm)
+        {
+            EmployeQuery oq = new EmployeQuery(contexte);
+            return oq.PerformSearch(searchTerm).ToList();
+        }
+
+        /// <summary>
         /// Récupérer un employé en base
         /// </summary>
         /// <param name="id">id de l'employé à ajouter</param>
@@ -277,6 +288,7 @@ namespace BusinessLayer
         /// <summary>
         /// Récupérer une liste d'offre en fonction d'une recherche
         /// </summary>
+        /// /// <param name="searchTerm">termes de recherche</param>
         /// <returns>Liste d'offre</returns>
         public List<Offer> PerformSearchOffer(string searchTerm)
         {

@@ -42,5 +42,25 @@ namespace BusinessLayer.Queries
             return _contexte.Employes.Where(p => p.Id == id).Include(c => c.Experiences).Include(c => c.Trainings);
         }
 
+        /// <summary>
+        /// Récupérer une Liste d'employé selon une recherche
+        /// </summary>
+        /// <param name="searchTerm">Termes de recherche</param>
+        /// <returns>IQueryable de Employes</returns>
+        public IQueryable<Employe> PerformSearch(string searchTerm)
+        {
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                searchTerm = searchTerm.ToLower();
+                return _contexte.Employes.Where(o => o.Firstname.ToLower().Contains(searchTerm) ||
+                                        o.Lastname.ToLower().Contains(searchTerm) ||
+                                        o.Biography.ToLower().Contains(searchTerm));
+            }
+            else
+            {
+                return _contexte.Employes;
+            }
+        }
+
     }
 }

@@ -22,10 +22,13 @@ namespace WebApplication.Controllers
         }
 
         // GET: Employes
-        public ActionResult Index()
+        public ActionResult Index(string searchTerm)
         {
-            List<Employe> employe = manager.GetAllEmploye();
-            return View(employe);
+            // Effectuer la recherche et obtenir les résultats
+            IEnumerable<Employe> searchResults = manager.PerformSearchEmploye(searchTerm);
+
+            // Afficher les résultats de recherche
+            return View(searchResults);
         }
 
         // GET: Employes/Details/5
