@@ -39,7 +39,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Date)
+            @Html.DisplayFor(model => model.Date, "_DateDisplay")
         </dd>
 
         <dt>
@@ -80,5 +80,22 @@
     </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @if (!Model.Candidacies.Any(c => c.EmployeId == 1))
+    {
+
+        using (Html.BeginForm("Create", "Candidacies", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.Hidden("OfferId", Model.Id)
+            @Html.Hidden("EmployeId", 1)
+            @Html.Hidden("Date", DateTime.Now)
+            @Html.Hidden("Status", "Postulé")
+
+            <button type="submit">Apply</button>
+        }
+    } else { 
+        <p>Vous avez déjà candidaté</p>
+    }
     @Html.ActionLink("Back to List", "Index")
+
 </p>

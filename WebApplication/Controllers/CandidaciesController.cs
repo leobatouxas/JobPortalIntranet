@@ -27,47 +27,44 @@ namespace WebApplication.Controllers
             return View(candidacies);
         }
 
-        // GET: Candidacies/Details/5
-        //public ActionResult Details(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    Candidacy candidacy = db.Candidacies.Find(id);
-        //    if (candidacy == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(candidacy);
-        //}
-
-        //// GET: Candidacies/Create
-        //public ActionResult Create()
-        //{
-        //    ViewBag.EmployeId = new SelectList(db.Employes, "Id", "Firstname");
-        //    ViewBag.OfferId = new SelectList(db.Offers, "Id", "Title");
-        //    return View();
-        //}
-
         // POST: Candidacies/Create
         // Pour vous protéger des attaques par survalidation, activez les propriétés spécifiques auxquelles vous souhaitez vous lier. Pour 
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Create([Bind(Include = "OfferId,EmployeId,Date,Status")] Candidacy candidacy)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Candidacies.Add(candidacy);
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "OfferId,EmployeId,Date,Status")] Candidacy candidacy)
+        {
+            if (ModelState.IsValid)
+            {
+                manager.AddCandidacy(candidacy);
+                return RedirectToAction("Index");
+            }
+            return RedirectToAction("Index", "Offers");
+        }
 
-        //    ViewBag.EmployeId = new SelectList(db.Employes, "Id", "Firstname", candidacy.EmployeId);
-        //    ViewBag.OfferId = new SelectList(db.Offers, "Id", "Title", candidacy.OfferId);
-        //    return View(candidacy);
-        //}
+        // GET: Offers/Delete/5
+        public ActionResult Delete(int? offerId, int? employeId)
+        {
+            if (offerId == null || employeId == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Candidacy candidacy = manager.GetCandidacyById((int)employeId, (int)offerId);
+            if (candidacy == null)
+            {
+                return HttpNotFound();
+            }
+            return View(candidacy);
+        }
+
+        // POST: Offers/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int offerId, int employeId)
+        {
+            manager.DeleteCandidacy(employeId, offerId);
+            return RedirectToAction("Index");
+        }
 
     }
 }

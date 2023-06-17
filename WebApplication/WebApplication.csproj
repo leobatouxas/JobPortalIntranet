@@ -192,11 +192,9 @@
     <Content Include="Views\Offers\Index.cshtml" />
     <Content Include="Views\Employes\Details.cshtml" />
     <Content Include="Views\Employes\Index.cshtml" />
-    <Content Include="Views\Candidacies\Create.cshtml" />
     <Content Include="Views\Candidacies\Delete.cshtml" />
-    <Content Include="Views\Candidacies\Details.cshtml" />
-    <Content Include="Views\Candidacies\Edit.cshtml" />
     <Content Include="Views\Candidacies\Index.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\_DateDisplay.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
