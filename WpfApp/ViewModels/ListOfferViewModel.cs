@@ -36,8 +36,6 @@ namespace WpfApp.ViewModels
             UpdateSortedList();
 
             _statuts = new ObservableCollection<Statut>(bm.GetAllStatut());
-
-            Console.WriteLine("construct");
         }
 
         #endregion

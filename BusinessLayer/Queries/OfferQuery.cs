@@ -29,7 +29,7 @@ namespace BusinessLayer.Queries
         /// <returns>IQueryable de Offre</returns>
         public IQueryable<Offer> GetAll()
         {
-            return _contexte.Offers.Include(o => o.Statut);
+            return _contexte.Offers.Include(o => o.Statut).Include(o => o.Candidacies).Include(c => c.Candidacies.Select(e => e.Employe));
         }
 
         /// <summary>

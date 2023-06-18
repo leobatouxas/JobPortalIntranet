@@ -18,6 +18,16 @@
 
             <Label Content="{Binding Title}" FontSize="30"/>
             <TextBlock Text="{Binding Description}" FontSize="18" />
+
+            <Label Content="applicants" FontSize="22"/>
+            <ListView ItemsSource="{Binding Candidacies, UpdateSourceTrigger=PropertyChanged}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="150px" Header="FirstName" DisplayMemberBinding="{Binding Employe.Firstname}" />
+                        <GridViewColumn Width="150px" Header="LastName" DisplayMemberBinding="{Binding Employe.Lastname}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </StackPanel>
     </Grid>
 </UserControl>

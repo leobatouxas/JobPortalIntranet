@@ -17,6 +17,7 @@ namespace WpfApp.ViewModels
         private string _title;
         private string _description;
         private Statut _status;
+        private ICollection<Candidacy> _candidacies;
         private RelayCommand _addOperation;
 
         #endregion
@@ -32,6 +33,7 @@ namespace WpfApp.ViewModels
             _title = o.Title; 
             _description = o.Description;
             _status = o.Statut;
+            _candidacies = o.Candidacies;
         }
         #endregion
 
@@ -63,33 +65,31 @@ namespace WpfApp.ViewModels
                 OnPropertyChanged("Status");
             }
         }
+
+        public ICollection<Candidacy> Candidacies
+        {
+            get { return _candidacies; }
+            set
+            {
+                _candidacies = value;
+                OnPropertyChanged("Candidacies");
+            }
+        }
+
+        public string EmployeName
+        {
+            get
+            {
+                if (Candidacies != null && Candidacies.Count > 0)
+                {
+                    Candidacy firstCandidacy = Candidacies.First();
+                    return $"{firstCandidacy.Employe.Firstname} {firstCandidacy.Employe.Lastname}";
+                }
+
+                return string.Empty;
+            }
+        }
+
         #endregion
-
-        //#region Commandes
-
-        ///// <summary>
-        ///// Commande pour ouvrir la fenêtre pour ajouter une opération
-        ///// </summary>
-        //public ICommand AddOperation
-        //{
-        //    get
-        //    {
-        //        if (_addOperation == null)
-        //            _addOperation = new RelayCommand(() => this.ShowWindowOperation());
-        //        return _addOperation;
-        //    }
-        //}
-
-        ///// <summary>
-        ///// Permet l'ouverture de la fenêtre
-        ///// </summary>
-        //private void ShowWindowOperation()
-        //{
-        //    Views.Operation operationWindow = new Views.Operation();
-        //    operationWindow.DataContext = this;
-        //    operationWindow.ShowDialog();
-        //}
-
-        //#endregion
     }
 }
