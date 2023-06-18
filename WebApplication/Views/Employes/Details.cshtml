@@ -60,7 +60,7 @@
             {
                 <dd>
                     @Html.DisplayFor(m => experience.Title) -
-                    @Html.DisplayFor(m => experience.Date)
+                    @Html.DisplayFor(m => experience.Date, "_DateDisplay")
                 </dd>
             }
         }
@@ -70,7 +70,7 @@
         }
 
         <dt>
-            Expériences
+            Diplomes
         </dt>
 
         @if (Model.Trainings.Count > 0)
@@ -79,7 +79,7 @@
             {
                 <dd>
                     @Html.DisplayFor(m => training.Title) -
-                    @Html.DisplayFor(m => training.Date)
+                    @Html.DisplayFor(m => training.Date, "_DateDisplay")
                 </dd>
             }
         }
