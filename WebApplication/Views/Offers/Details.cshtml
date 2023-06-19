@@ -81,23 +81,29 @@
     </dl>
     </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @if (!Model.Candidacies.Any(c => c.EmployeId == 1))
-    {
+    <div>
+        @Html.ActionLink("Edit", "Edit", "Offers", new { id = Model.Id }, new { @class = "btn btn-primary" })
+        @Html.ActionLink("Back to List", "Index", "Offers", new { }, new { @class = "btn btn-secondary" })
 
-        using (Html.BeginForm("Create", "Candidacies", FormMethod.Post))
+        @if (!Model.Candidacies.Any(c => c.EmployeId == 1))
         {
-            @Html.AntiForgeryToken()
-            @Html.Hidden("OfferId", Model.Id)
-            @Html.Hidden("EmployeId", 1)
-            @Html.Hidden("Date", DateTime.Now)
-            @Html.Hidden("Status", "Postulé")
 
-            <button type="submit">Apply</button>
+            using (Html.BeginForm("Create", "Candidacies", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.Hidden("OfferId", Model.Id)
+                @Html.Hidden("EmployeId", 1)
+                @Html.Hidden("Date", DateTime.Now)
+                @Html.Hidden("Status", "Postulé")
+
+                <button type="submit" class="btn btn-success">Apply</button>
+            }
         }
-    } else { 
-        <p>Vous avez déjà candidaté</p>
-    }
-    @Html.ActionLink("Back to List", "Index")
+        else
+        {
+            <p>Vous avez déjà candidaté</p>
+        }
+    </div>
+    
 
 </p>
