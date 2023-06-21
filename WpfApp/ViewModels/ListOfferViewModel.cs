@@ -36,6 +36,11 @@ namespace WpfApp.ViewModels
             UpdateSortedList();
 
             _statuts = new ObservableCollection<Statut>(bm.GetAllStatut());
+
+            //add statut "Tous 
+            Statut statutAll = new Statut();
+            statutAll.Libelle = "Tous";
+            _statuts.Insert(0,statutAll);
         }
 
         #endregion
@@ -93,7 +98,7 @@ namespace WpfApp.ViewModels
 
         private void UpdateSortedList()
         {
-            if (SelectedStatut != null)
+            if (SelectedStatut != null && SelectedStatut.Libelle != "Tous")
             {
                 updateOffer();
                 Offers = new ObservableCollection<DetailOfferViewModel>(_offers.Where(offer => offer.Status == SelectedStatut));
@@ -106,6 +111,7 @@ namespace WpfApp.ViewModels
 
         private void updateOffer()
         {
+            Offers.Clear();
             Manager bm = Manager.Instance;
 
             foreach (Offer o in bm.GetAllOffer())
@@ -116,7 +122,6 @@ namespace WpfApp.ViewModels
             if (_offers != null && _offers.Count > 0)
             {
                 _selectedOffer = _offers.ElementAt(0);
-
             }
         }
     }
