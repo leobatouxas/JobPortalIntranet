@@ -32,7 +32,7 @@
             @Html.DisplayFor(modelItem => item.Status)
         </td>
         <td>
-            @Html.ActionLink("Delete", "Delete", new { offerId=item.OfferId, employeId=item.EmployeId })
+            @Html.ActionLink("Delete", "Delete", "Candidacies", new { offerId=item.OfferId, employeId=item.EmployeId }, new { @class = "btn btn-danger" })
         </td>
     </tr>
 }
